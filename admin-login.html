@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ඇඩ්මින් ලොගින් | රං ටිකිරි</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <span class="logo-badge">ර</span>
+      <span class="logo-text"><b>රං ටිකිරි</b><span>RAN TIKIRI GOLD</span></span>
+    </a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">මුල් පිටුව</a></li>
+      <li><a href="items.html">රන් භාණ්ඩ</a></li>
+      <li><a href="calculator.html">වාරික කැල්කුලේටරය</a></li>
+      <li><a href="about.html">අප ගැන</a></li>
+      <li><a href="admin-login.html" class="active">ඇඩ්මින් ලොගින්</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <div class="container">
+    <div class="login-card">
+      <div style="text-align:center;font-size:48px;margin-bottom:8px">🔐</div>
+      <h2>ඇඩ්මින් ලොගින්</h2>
+      <p class="sub">ඇඩ්මින් පැනලයට පිවිසීමට ලොග් වන්න</p>
+      <form id="loginForm" novalidate>
+        <div class="field" id="f-user">
+          <label for="username">පරිශීලක නම</label>
+          <input type="text" id="username" placeholder="admin" autocomplete="username">
+        </div>
+        <div class="field" id="f-pass">
+          <label for="password">මුරපදය</label>
+          <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+          <p class="err" id="loginErr">පරිශීලක නම හෝ මුරපදය වැරදියි.</p>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">ලොග් වන්න →</button>
+      </form>
+      <div class="demo-hint">Demo ලොගින් — පරිශීලක නම: <b>admin</b> · මුරපදය: <b>ran2026</b><br>(පසුව js/admin.js හිදී වෙනස් කළ හැක)</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-bottom">© <span id="year">2026</span> රං ටිකිරි — සියලුම හිමිකම් ඇවිරිණි.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

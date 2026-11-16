@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>වාරික කැල්කුලේටරය | රං ටිකිරි</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="logo" href="index.html">
+      <span class="logo-badge">ර</span>
+      <span class="logo-text"><b>රං ටිකිරි</b><span>RAN TIKIRI GOLD</span></span>
+    </a>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">මුල් පිටුව</a></li>
+      <li><a href="items.html">රන් භාණ්ඩ</a></li>
+      <li><a href="calculator.html" class="active">වාරික කැල්කුලේටරය</a></li>
+      <li><a href="about.html">අප ගැන</a></li>
+      <li><a href="admin-login.html">ඇඩ්මින් ලොගින්</a></li>
+      <li><a class="btn-wa" href="https://wa.me/94763729072" target="_blank" rel="noopener">WhatsApp</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <div class="container">
+    <div class="sec-title">
+      <h2>වාරික <span class="gold">කැල්කුලේටරය</span></h2>
+      <p>ණය මුදල 70% · වාර්ෂික පොලිය 16% · හීනවන ශේශ ක්‍රමය (Reducing Balance)</p>
+    </div>
+
+    <!-- STEP 1: FORM GATE -->
+    <div class="form-card" id="leadFormCard">
+      <h3>📝 පළමුව ඔබේ තොරතුරු පුරවන්න</h3>
+      <p class="hint">කැල්කුලේටරය භාවිත කිරීමට පෙර පහත තොරතුරු අනිවාරයෙන් ලබා දිය යුතුය. ඔබේ තොරතුරු අපි විසින් සුරක්ෂිතව තබා ගනු ලැබේ.</p>
+      <form id="leadForm" novalidate>
+        <div class="field" id="f-name">
+          <label for="name">ඔබේ නම *</label>
+          <input type="text" id="name" placeholder="උදා. කසුන් පෙරේරා" autocomplete="name">
+          <p class="err">කරුණාකර ඔබේ නම ඇතුළත් කරන්න.</p>
+        </div>
+        <div class="field" id="f-phone">
+          <label for="phone">දුරකතන අංකය *</label>
+          <input type="tel" id="phone" placeholder="උදා. 077 123 4567" autocomplete="tel">
+          <p class="err">කරුණාකර නිවැරදි දුරකතන අංකයක් ඇතුළත් කරන්න (අංක 10යි).</p>
+        </div>
+        <div class="form-row">
+          <div class="field" id="f-district">
+            <label for="district">දිස්ත්‍රික්කය *</label>
+            <select id="district">
+              <option value="">— තෝරන්න —</option>
+              <option>කොළඹ</option><option>ගම්පහ</option><option>කළුතර</option>
+              <option>මහනුවර</option><option>මාතලේ</option><option>නුවරඑළිය</option>
+              <option>ගාල්ල</option><option>මාතර</option><option>හම්බන්තොට</option>
+              <option>යාපනය</option><option>කිලිනොච්චිය</option><option>මන්නාරම</option>
+              <option>වවුනියාව</option><option>මුලතිව්</option><option>ත්‍රිකුණාමලය</option>
+              <option>කුරුණෑගල</option><option>පුත්තලම</option><option>අනුරාධපුර</option>
+              <option>පොලොන්නරුව</option><option>බදුල්ල</option><option>මොණරාගල</option>
+              <option>රත්නපුර</option><option>කෑගල්ල</option><option>අම්පාර</option>
+              <option>මඩකලපුව</option>
+            </select>
+            <p class="err">කරුණාකර ඔබේ දිස්ත්‍රික්කය තෝරන්න.</p>
+          </div>
+          <div class="field" id="f-pawns">
+            <label for="pawns">ඉල්ලුම් කරන පවුම් ගණන *</label>
+            <input type="number" id="pawns" min="1" max="100" step="0.5" placeholder="උදා. 2">
+            <p class="err">කරුණාකර පවුම් ගණනක් ඇතුළත් කරන්න.</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">තොරතුරු ඉදිරිපත් කර කැල්කුලේටරය විවෘත කරන්න →</button>
+      </form>
+    </div>
+
+    <!-- STEP 2: CALCULATOR -->
+    <div id="calcSection" style="display:none">
+      <div class="form-card" style="max-width:760px">
+        <h3>🧮 වාරික ගණනය</h3>
+        <p class="hint" id="calcGreeting"></p>
+        <div class="form-row">
+          <div class="field">
+            <label for="carat">රන් වර්ගය (කැරට්)</label>
+            <select id="carat">
+              <option value="22">කැරට් 22 (22K)</option>
+              <option value="24">කැරට් 24 (24K)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="calcPawns">පවුම් ගණන (1 පවුම = 8g)</label>
+            <input type="number" id="calcPawns" min="0.5" step="0.5">
+          </div>
+        </div>
+        <div class="field">
+          <label for="pricePerGram">ග්‍රෑම් එකක මිල (රු.) — Live මිල</label>
+          <input type="number" id="pricePerGram" min="1">
+        </div>
+        <button class="btn btn-gold btn-block" id="calcBtn">වාරික ගණනය කරන්න</button>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="calc-results" id="calcResults" style="display:none">
+        <div class="summary-grid">
+          <div class="sum-card"><small>මුළු බර</small><b id="rWeight">—</b></div>
+          <div class="sum-card"><small>රන් මුළු වටිනාකම</small><b id="rTotal">—</b></div>
+          <div class="sum-card loan"><small>ණය මුදල (70%)</small><b id="rLoan">—</b></div>
+          <div class="sum-card"><small>අවම මුල් ගෙවීම (30%)</small><b id="rDown">—</b></div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="calc">
+            <thead>
+              <tr><th>වාරික කාලය</th><th>මාසික වාරිකය</th><th>මුළු පොලිය</th><th>මුළු ගෙවීම</th></tr>
+            </thead>
+            <tbody id="calcTableBody"></tbody>
+          </table>
+        </div>
+        <p class="calc-note">පොලී අනුපාතය: වාර්ෂික 16% · ගණනය කිරීම: හීනවන ශේශ ක්‍රමය (සෑම මාසයකම ඉතිරි ශේශය මත පොලිය ගණනය කෙරේ). අවසන් මිල රන් මිල වෙනස් වීම අනුව වෙනස් විය හැක.</p>
+
+        <div class="calc-actions">
+          <a class="btn btn-wa" id="waOrderBtn" target="_blank" rel="noopener">💬 WhatsApp හරහා ඇණවුම් කරන්න</a>
+          <button class="btn btn-outline" id="editBtn">✏️ තොරතුරු වෙනස් කරන්න</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <h4>රං ටිකිරි</h4>
+        <p>දරුවාගේ අනාගතය වෙනුවෙන් කරන රං ආයෝජනය. 22K / 24K රන් භාණ්ඩ වාරික පහසුකම් සහිතව.</p>
+      </div>
+      <div>
+        <h4>ඉක්මන් සබැඳි</h4>
+        <ul>
+          <li><a href="index.html">මුල් පිටුව</a></li>
+          <li><a href="items.html">රන් භාණ්ඩ</a></li>
+          <li><a href="calculator.html">වාරික කැල්කුලේටරය</a></li>
+          <li><a href="about.html">අප ගැන</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>සම්බන්ධ වන්න</h4>
+        <ul>
+          <li>📞 076 372 9072</li>
+          <li>💬 <a href="https://wa.me/94763729072" target="_blank" rel="noopener">WhatsApp හරහා ඇණවුම් කරන්න</a></li>
+          <li>🕘 සෑම දිනකම උදෑසන 8.00 – රාත්‍රී 9.00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">© <span id="year">2026</span> රං ටිකිරි — සියලුම හිමිකම් ඇවිරිණි.</div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/94763729072" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.6.8 5 2.3 7L4 29l7.3-2.3c1.4.8 3 1.2 4.7 1.2 6.6 0 12-5.3 12-11.9S22.6 3 16 3zm0 21.8c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1 1 1-3-.2-.3c-1.3-2-2-4.3-2-6.7C7.1 9.6 11 5.7 16 5.7s8.9 3.9 8.9 8.7-3.9 10.4-8.9 10.4zm4.9-7.4c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-2.5-1.2-4.1-3.7-4.2-3.9-.1-.2 0-.4.1-.5l.5-.6c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.6-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script src="js/main.js"></script>
+<script src="js/calculator.js"></script>
+</body>
+</html>
